@@ -104,27 +104,6 @@
     $(document).ready(function () {
       $.ajax({
         type: "GET",
-        [
-  "match",
-  ["get", "country"],
-  ["UK"],
-  "#b7b6b6",
-  ["USA"],
-  "#93a1d2",
-  ["Caribbean"],
-  "#cdd500",
-  ["China"],
-  "#c26558",
-  ["Indonesia"],
-  "#53697a",
-  ["Philippines"],
-  "#fcd3ae",
-  ["India"],
-  "#f0c76d",
-  ["spain"],
-  "hsl(0, 88%, 57%)",
-  "hsl(0, 0%, 0%)"
-]
         //YOUR TURN: Replace with csv export link
         url: 'https://docs.google.com/spreadsheets/d/1cZ0q_UMiAC7SFgSr79GDeRpFrphMhzNlNuloV7oE1cc/gviz/tq?tqx=out:csv&sheet=ALL',
         dataType: "text",
@@ -151,9 +130,36 @@
               },
               'paint': {
                 'circle-radius': 5,
-                'circle-color': "white",
-              }
-            });
+                'circle-color': "white"
+                
+                ]
+},
+// color circles by ethnicity, using a match expression
+// https://docs.mapbox.com/mapbox-gl-js/style-spec/#expressions-match
+'circle-color': [
+  "match",
+  ["get", "country"],
+  ["UK"],
+  "#b7b6b6",
+  ["USA"],
+  "#93a1d2",
+  ["Caribbean"],
+  "#cdd500",
+  ["China"],
+  "#c26558",
+  ["Indonesia"],
+  "#53697a",
+  ["Philippines"],
+  "#fcd3ae",
+  ["India"],
+  "#f0c76d",
+  ["spain"],
+  "hsl(0, 88%, 57%)",
+  "hsl(0, 0%, 0%)"
+]
+}
+});
+});
 
 
             // When a click event occurs on a feature in the csvData layer, open a popup at the
