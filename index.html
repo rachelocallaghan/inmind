@@ -38,7 +38,6 @@
 
     .mapboxgl-popup-content {
       width: 100%;
-      background: #000;
     }
 
     .mapboxgl-popup-content-wrapper {
@@ -181,6 +180,36 @@
             // location of the feature, with description HTML from its properties.
             map.on('click', 'csvData', function (e) {
               var coordinates = e.features[0].geometry.coordinates.slice();
+              
+                'color': [
+  'match',
+   ['get', 'Country'],
+   ['UK'],
+   '#dddddd',
+   ['USA'],
+   '#93a1d2',
+   ['Caribbean'],
+   '#cdd500',
+   ['China'],
+   '#992b16',
+   ['Indonesia'],
+   '#53697a',
+   ['Philippines'],
+   '#fcd3ae',
+   ['India'],
+   '#f0c76d',
+   ['Germany'],
+   '#b4c9e3',
+   ['Spain'],
+   '#f0a3b7',
+   ['Australia'],
+   '#e9624e',
+   ['Canada'],
+   '#6dbe93',
+   ['Netherlands'],
+   '#3aaa35',
+   /* other */ 'white'
+]
 
               //set popup text 
               //You can adjust the values of the popup to match the headers of your CSV. 
