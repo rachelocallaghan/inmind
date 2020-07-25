@@ -200,8 +200,8 @@
                 .setHTML(description)
                 .addTo(map);
             }
-                  
-                                  'background-color': [
+ 'paint': {                 
+'background-color': [
   'match',
    ['get', 'Country'],
    ['UK'],
@@ -229,7 +229,10 @@
    ['Netherlands'],
    '#3aaa35',
    /* other */ 'white'
-]);
+]
+}
+            });
+                  
 
             // Change the cursor to a pointer when the mouse is over the places layer.
             map.on('mouseenter', 'csvData', function () {
